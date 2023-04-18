@@ -17,6 +17,16 @@ const navConfig = [
     icon: icon('ic_user'),
   },
   {
+    title: 'reservation',
+    path: '/dashboard/reservation',
+    icon: icon('ic_booking'),
+  },
+  {
+    title: 'transaction',
+    path: '/dashboard/transaction',
+    icon: icon('ic_transaction'),
+  },
+  {
     title: 'product',
     path: '/dashboard/products',
     icon: icon('ic_cart'),

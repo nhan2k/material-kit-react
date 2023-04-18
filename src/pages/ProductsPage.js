@@ -6,10 +6,11 @@ import { Container, Stack, Typography } from '@mui/material';
 import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
 // mock
 import PRODUCTS from '../_mock/products';
+import requireAuth from '../hocs/requireAuth';
 
 // ----------------------------------------------------------------------
 
-export default function ProductsPage() {
+function ProductsPage() {
   const [openFilter, setOpenFilter] = useState(false);
 
   const handleOpenFilter = () => {
@@ -48,3 +49,5 @@ export default function ProductsPage() {
     </>
   );
 }
+
+export default requireAuth(ProductsPage);

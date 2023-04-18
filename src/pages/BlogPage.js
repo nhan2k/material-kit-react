@@ -6,6 +6,7 @@ import Iconify from '../components/iconify';
 import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../sections/@dashboard/blog';
 // mock
 import POSTS from '../_mock/blog';
+import requireAuth from '../hocs/requireAuth';
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +18,7 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-export default function BlogPage() {
+function BlogPage() {
   return (
     <>
       <Helmet>
@@ -48,3 +49,5 @@ export default function BlogPage() {
     </>
   );
 }
+
+export default requireAuth(BlogPage);

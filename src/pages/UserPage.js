@@ -30,6 +30,7 @@ import Scrollbar from '../components/scrollbar';
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
 import USERLIST from '../_mock/user';
+import requireAuth from '../hocs/requireAuth';
 
 // ----------------------------------------------------------------------
 
@@ -73,7 +74,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function UserPage() {
+function UserPage() {
   const [open, setOpen] = useState(null);
 
   const [page, setPage] = useState(0);
@@ -292,3 +293,5 @@ export default function UserPage() {
     </>
   );
 }
+
+export default requireAuth(UserPage);

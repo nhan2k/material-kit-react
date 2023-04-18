@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
+
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography } from '@mui/material';
@@ -17,10 +18,11 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
+import requireAuth from '../hocs/requireAuth';
 
 // ----------------------------------------------------------------------
 
-export default function DashboardAppPage() {
+function DashboardAppPage() {
   const theme = useTheme();
 
   return (
@@ -217,3 +219,5 @@ export default function DashboardAppPage() {
     </>
   );
 }
+
+export default requireAuth(DashboardAppPage);
